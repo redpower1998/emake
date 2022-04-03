@@ -1,6 +1,10 @@
-## Preface
+##  说明：  
+本程序修改自skywind的3.6.9版本. 原版本只支持Python2. 经过本人修改后，当前支持Python3。 另外修改了原版本的格式。  
 
-GNU Make 太麻烦？Makefile 写起来太臃肿？头文件依赖生成搞不定？多核同时编译太麻烦？Emake 帮你解决这些问题：
+ 
+## Preface  
+  
+GNU Make 太麻烦？Makefile 写起来太臃肿？头文件依赖生成搞不定？多核同时编译太麻烦？Emake 帮你解决这些问题：  
 
 - 使用简单：设定源文件，设定编译参数和输出目标就行了，emake为你打点好一切。
 - 依赖分析：快速分析源代码所依赖的头文件，决定是否需要重新编译。
@@ -21,27 +25,16 @@ Emake 是为快速开发而生的，最初版本在 2009年发布，多年间团
 多年的开发中，emake 提高了各种大小项目的开发效率，自身也随着时间增加不断被完善和稳定。
 
 
-## Install
+## 用法  
 
-#### Linux / Mac OS X: 
-
-```bash
-wget http://skywind3000.github.io/emake/emake.py
-sudo python2 emake.py -i
-```
-
-运行上面两条指令，十秒内完成安装。emake 会拷贝自己到 /usr/local/bin 下面，后面直接使用 emake 指令操作。
-
-#### Windows:
+#### Linux / Mac OS X / Windows:
 	
-下载 emake.py，放到你的 mingw 根目录下（便于 emake 定位 gcc），并且添加到 PATH 环境变量，同级目录新建立一个 emake.cmd 文件，内容如下：
+推荐下载 emake.py，并与你的源代码放在同一目录中并一起发布。  
+支持命令行，也支持配置文件方式  
 
-```batch
-@echo off
-d:\dev\python27\python.exe d:\dev\mingw\emake.py %*
+```usage
+python emake.py 你的文件
 ```
-
-修改一下对应路径即可，建立这个 emake.cmd 的批处理文件是为了方便每次敲 emake 就可以工作，避免敲 "python emake.py" 一长串。
 
 ## Tutorial
 
@@ -392,5 +385,5 @@ int main(void)
 
 本项目旧地址：
 
-https://code.google.com/archive/p/easymake/
-
+https://code.google.com/archive/p/easymake/  
+原作者发表在http://skywind3000.github.io/emake/  
