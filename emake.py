@@ -2214,7 +2214,7 @@ class iparser (object):
     # 扫描代码中 关键注释的工程信息
     def _scan_memo(self, filename, prefix='!'):
         command = []
-        content = open(filename, 'U').read()
+        content = open(filename).read()
         srctext = self.preprocessor.preprocess(content)
         srcline = [0 for i in range(len(srctext))]
         length = len(srctext)
@@ -2280,7 +2280,7 @@ class iparser (object):
         ext = os.path.splitext(self.makefile)[1].lower()
         lineno = 1
         retval = 0
-        for text in open(self.makefile, 'U'):
+        for text in open(self.makefile):
             if ext in ('.pyx', '.py'):
                 text = text.strip('\r\n\t ')
                 if text[:3] != '##!':
@@ -2722,7 +2722,7 @@ class dependence (object):
         lineno = -1
         retval = 0
         if os.path.exists(self._depname):
-            for line in open(self._depname, 'U'):
+            for line in open(self._depname):
                 line = line.strip(' \t\r\n')
                 if not line:
                     continue
@@ -3468,7 +3468,7 @@ if __name__ == '__main__':
         head, lost, text = pst.dependence('voice/fastvoice/basewave.cpp')
         for n in head:
             print(n)
-        pp = pst.preprocess(file('voice/fastvoice/basewave.cpp', 'U').read())
+        pp = pst.preprocess(file('voice/fastvoice/basewave.cpp').read())
         print(pp)
 
     def test3():
